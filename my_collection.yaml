@@ -40,3 +40,11 @@ environments:
     created: 1749488765138
     modified: 1749488765138
     isPrivate: false
+  subEnvironments:
+    - name: Dev
+      meta:
+        id: env_1c5ea6f0737c410f9fd573595d10c423
+        created: 1749488892610
+        modified: 1749488909969
+        isPrivate: false
+        sortKey: 1749488892610
