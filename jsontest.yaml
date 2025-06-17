@@ -1,0 +1,995 @@
+type: collection.insomnia.rest/5.0
+name: JsonTest
+meta:
+  id: wrk_a166de03dcd14d18ab85ac81b96cffdc
+  created: 1750173679472
+  modified: 1750173679472
+  description: ""
+collection:
+  - url: "{{ _.host }}/users/me"
+    name: Get Profile
+    meta:
+      id: req_af8527dc037c4486bd7f9e886fd8f914
+      created: 1750173794008
+      modified: 1750174554662
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794008
+    method: GET
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/auth/login"
+    name: Login
+    meta:
+      id: req_3dc40046343e4fbbb7ee034818ef1966
+      created: 1750173794010
+      modified: 1750173794010
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794010
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "string",
+          "password": "string"
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/users/me"
+    name: Update Profile
+    meta:
+      id: req_f5363969f3a7408798938eeda87a1d8c
+      created: 1750173794010
+      modified: 1750173794010
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794010
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "username": null
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/auth/register"
+    name: Register
+    meta:
+      id: req_e71d9d33cb5e4d9090889313b824b024
+      created: 1750173794011
+      modified: 1750173794011
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794011
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "username": "string",
+          "email": "string",
+          "password": "string",
+          "verification_code": "string",
+          "cloudflare_turnstile_token": "string"
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/auth/reset-password"
+    name: Resets password
+    meta:
+      id: req_d1cf8b08a47b4f1c925c912efba6c9a1
+      created: 1750173794012
+      modified: 1750173794012
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794012
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "string",
+          "verification_code": "string",
+          "new_password": "string",
+          "cloudflare_turnstile_token": "string"
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/auth/request-temporary-code"
+    name: Sends confirmation code to email
+    meta:
+      id: req_dc63e2fe57ce4464b9cb93adbdfa317e
+      created: 1750173794012
+      modified: 1750173794012
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794012
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "string"
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/auth/refresh"
+    name: Refresh
+    meta:
+      id: req_8015914a89a148eb972557f867c51c68
+      created: 1750173794013
+      modified: 1750173794013
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794013
+    method: POST
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/auth/logout"
+    name: Logout
+    meta:
+      id: req_a99df620cd074be4b4627308b02ef4c0
+      created: 1750173794013
+      modified: 1750173794013
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794013
+    method: POST
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/agents/{{ _.agent_id }}"
+    name: Update Agent
+    meta:
+      id: req_210536fb878d44e1adbd156a58b69bd3
+      created: 1750173794014
+      modified: 1750173794014
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794014
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "agent_data": null,
+          "server_ids": null
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/agents/{{ _.agent_id }}"
+    name: Get Single Agent
+    meta:
+      id: req_c3aad2e6415c4b969064d22726e0b345
+      created: 1750173794014
+      modified: 1750173794014
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794014
+    method: GET
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/agents/{{ _.agent_id }}"
+    name: Delete Agent
+    meta:
+      id: req_1eae2ef033494dc483cca63bbbea1225
+      created: 1750173794015
+      modified: 1750173794015
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794015
+    method: DELETE
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/agents"
+    name: List Agents
+    meta:
+      id: req_8ff6830d23dd4274a2dc5d4a1d2252ea
+      created: 1750173794015
+      modified: 1750173794015
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794015
+    method: GET
+    parameters:
+      - name: page
+        disabled: true
+        value: "1"
+      - name: size
+        disabled: true
+        value: "50"
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/agents"
+    name: Create Agent
+    meta:
+      id: req_d3183a45ce5a42ae9e6e6ce65bd5fff9
+      created: 1750173794016
+      modified: 1750173794016
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794016
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "agent_data": {
+            "name": "Default",
+            "description": null,
+            "avatar_url": null,
+            "system_prompt": null,
+            "model": null
+          },
+          "current_user_id": "string",
+          "server_ids": null
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/chats/{{ _.chat_id }}"
+    name: Update Chat
+    meta:
+      id: req_8832b735483a4660b8d80de22a5cf3bf
+      created: 1750173794017
+      modified: 1750173794017
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794017
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "update_data": {
+            "title": "string"
+          }
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/chats/{{ _.chat_id }}"
+    name: Get Single Chat
+    meta:
+      id: req_a1642fc3b0cd467ca8b442119b3d720b
+      created: 1750173794017
+      modified: 1750173794017
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794017
+    method: GET
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/chats/"
+    name: List Chats
+    meta:
+      id: req_481c49fb775b4eb89a71174efcd95bdb
+      created: 1750173794018
+      modified: 1750173794018
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794018
+    method: GET
+    parameters:
+      - name: page
+        disabled: true
+        value: "1"
+      - name: size
+        disabled: true
+        value: "50"
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/chats/{{ _.chat_id }}"
+    name: Delete Chat
+    meta:
+      id: req_85a2950987c54a8cb0b3556517fa2306
+      created: 1750173794018
+      modified: 1750173794018
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794018
+    method: DELETE
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/chats/"
+    name: Create Chat
+    meta:
+      id: req_a4f38abe0d234263a7e7d2037813984a
+      created: 1750173794019
+      modified: 1750173794019
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794019
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "chat_data": {
+            "agent_id": "string",
+            "title": null
+          }
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/chats/{{ _.chat_id }}/messages"
+    name: Create Message
+    meta:
+      id: req_09f0c2138802403aade256ed45c2d0a9
+      created: 1750173794020
+      modified: 1750173794020
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794020
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "data": {
+            "text": null
+          },
+          "routing": true
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/chats/{{ _.chat_id }}/messages"
+    name: Get Chat Messages
+    meta:
+      id: req_4def7d3df02e4fa9912399cd06bad269
+      created: 1750173794020
+      modified: 1750173794020
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794020
+    method: GET
+    parameters:
+      - name: page
+        disabled: true
+        value: "1"
+      - name: size
+        disabled: true
+        value: "50"
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/registry/servers"
+    name: Get All Servers
+    meta:
+      id: req_d6aaa972c7ae4636b86f554a6c7cd47e
+      created: 1750173794021
+      modified: 1750173794021
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794021
+    method: GET
+    parameters:
+      - name: query
+        disabled: true
+        value: "null"
+      - name: server_status
+        disabled: true
+        value: active
+      - name: creator_id
+        disabled: true
+        value: "null"
+      - name: page
+        disabled: true
+        value: "1"
+      - name: size
+        disabled: true
+        value: "50"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/registry/servers"
+    name: Add Server
+    meta:
+      id: req_5431b6534ba34aa686111b048f8ea9e1
+      created: 1750173794022
+      modified: 1750173794022
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794022
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "string",
+          "name": "string",
+          "description": "string",
+          "url": "string",
+          "logo": null
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/registry/servers/batch"
+    name: Get Batch
+    meta:
+      id: req_d35389c6e73e4d2a9edf0f7ceb11403c
+      created: 1750173794022
+      modified: 1750173794022
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794022
+    method: GET
+    parameters:
+      - name: ids
+        disabled: false
+        value: "0"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/registry/servers/{{ _.server_id }}"
+    name: Delete Server
+    meta:
+      id: req_c16f4ba7ebea48d68f551a1e75878fe7
+      created: 1750173794023
+      modified: 1750173794023
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794023
+    method: DELETE
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/registry/servers/{{ _.server_id }}"
+    name: Update Server
+    meta:
+      id: req_1a9eb4cdcdfc43b1b0ad08a63dd6058a
+      created: 1750173794024
+      modified: 1750173794024
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794024
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "data": {
+            "title": null,
+            "name": null,
+            "description": null,
+            "url": null,
+            "logo": null
+          },
+          "deployment_data": {
+            "command": null,
+            "repo_url": null
+          }
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/registry/servers/{{ _.server_id }}"
+    name: Get Server By Id
+    meta:
+      id: req_57ab263da9dc42268dfe26111a3aac99
+      created: 1750173794024
+      modified: 1750173794024
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794024
+    method: GET
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/deploy/deployments/"
+    name: Add Server
+    meta:
+      id: req_d5673c6e85a04e9dac15f4e6d0975f25
+      created: 1750173794025
+      modified: 1750173794025
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794025
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "data": {
+            "title": "string",
+            "name": "string",
+            "description": "string",
+            "repo_url": "string",
+            "command": null,
+            "logo": null,
+            "base_image": null,
+            "build_instructions": null
+          }
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/deploy/deployments/{{ _.server_id }}/stop"
+    name: Stop Server
+    meta:
+      id: req_f8db600a14b74d22a0afbbb8d81f9f84
+      created: 1750173794025
+      modified: 1750173794025
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794025
+    method: POST
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/deploy/deployments/{{ _.server_id }}/logs"
+    name: Get Server Logs
+    meta:
+      id: req_9eccbb553d734ef38409d5dd3e5c1754
+      created: 1750173794026
+      modified: 1750173794026
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794026
+    method: GET
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/deploy/deployments/{{ _.server_id }}/start"
+    name: Start Server
+    meta:
+      id: req_6f5e1f71a9284a6c8c89ec6c4e34b086
+      created: 1750173794027
+      modified: 1750173794027
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794027
+    method: POST
+    authentication:
+      type: bearer
+      token: "{{ _.bearerToken }}"
+      prefix: ""
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/images/{{ _.filename }}"
+    name: Get Image
+    meta:
+      id: req_91794d2a39ce4a1f8c35f75169a16f73
+      created: 1750173794028
+      modified: 1750173794028
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794028
+    method: GET
+    parameters:
+      - name: w
+        disabled: true
+        value: "null"
+      - name: h
+        disabled: true
+        value: "null"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/images/upload_image"
+    name: Create Upload Image
+    meta:
+      id: req_0e836643b565431c83be65e1276a91cb
+      created: 1750173794029
+      modified: 1750173794029
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794029
+    method: POST
+    body:
+      mimeType: multipart/form-data
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: multipart/form-data
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/images/upload_image_by_url"
+    name: Upload Image By Url
+    meta:
+      id: req_19faa138808744c9a3992785a993e313
+      created: 1750173794030
+      modified: 1750173794030
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794030
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "file_url": "string"
+        }
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/healthcheck"
+    name: Healthcheck
+    meta:
+      id: req_383d470ef9c2413aac9f2875cb24cc93
+      created: 1750173794030
+      modified: 1750173794030
+      isPrivate: false
+      description: ""
+      sortKey: -1750173794030
+    method: GET
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_e1ab8d4c51672586a94866ed9f4ab3a76cc71300
+    created: 1750173679501
+    modified: 1750174556850
+  cookies:
+    - key: session_token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMDFKWFo4R1JLRllaMEJZNzg0N0I2OTBQV0ciLCJzY29wZSI6IkFDQ0VTUyJ9.DYgo4QY2d9VoWPYKbZAyWnA_LEU1P3pCXO63piqrnzE
+      domain: dev.to.ci
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-06-17T15:35:56.850Z
+      lastAccessed: 2025-06-17T15:35:56.850Z
+      sameSite: lax
+      id: 48c410d0-8916-4d75-bb6b-bae138816d6e
+environments:
+  name: Base Environment
+  meta:
+    id: env_e1ab8d4c51672586a94866ed9f4ab3a76cc71300
+    created: 1750173679499
+    modified: 1750174243578
+    isPrivate: false
+  data:
+    URL: https://dev.to.ci
+  subEnvironments:
+    - name: OpenAPI env example.com
+      meta:
+        id: env_612a1f04201340cbaa484e7e50877380
+        created: 1750173794006
+        modified: 1750174616120
+        isPrivate: false
+        sortKey: 1750173794006
+      data:
+        scheme: https
+        host: https://dev.to.ci/api/v2
+        bearerToken: bearerToken
+    - name: New Environment
+      meta:
+        id: env_e9e225f7384d4c3ab2dd8bdda02bcfc8
+        created: 1750174140192
+        modified: 1750174301579
+        isPrivate: false
+        sortKey: 1750174140192
